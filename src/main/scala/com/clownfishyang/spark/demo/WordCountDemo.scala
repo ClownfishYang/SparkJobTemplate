@@ -11,28 +11,7 @@ import scala.util.parsing.json.JSON
   * @author ClownfishYang<br>
   *         created on 2020/11/13 10:52<br>
   */
-object WordCountDemo extends Job {
-
-
-  override def parseArgs(args: Array[String]): Map[String, Any] = {
-    if (args == null || args.length == 0) {
-      println("文件路径[--data-file]不能为空.")
-      sys.exit(1)
-    }
-    val list = args.toList
-
-    def nextOption(map: Map[String, Any], list: List[String]): Map[String, Any] = {
-      list match {
-        case Nil => map
-        case "--data-file" :: value :: tail => nextOption(map + ("dataFile" -> value), tail)
-        case "--output-file" :: value :: tail => nextOption(map + ("outputFile" -> value), tail)
-        case option :: tail => println("Unknown option " + option)
-          sys.exit(1)
-      }
-    }
-
-    nextOption(Map(), list)
-  }
+object WordCountDemo extends Demo {
 
   override def run: Unit = {
 
@@ -59,8 +38,4 @@ object WordCountDemo extends Job {
       .foreach(println)
   }
 
-  def readDataFile = {
-    val is = getClass.getResourceAsStream(option("dataFile").toString)
-    Source.fromInputStream(is).getLines().toSeq
-  }
 }
