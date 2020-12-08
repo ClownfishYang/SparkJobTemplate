@@ -4,7 +4,7 @@ import grizzled.slf4j.Logging
 import org.apache.spark.sql.SparkSession
 
 /**
- * Copyright (C), 2015-${YEAR}, 深圳市环球易购电子商务有限公司<br>
+ * Copyright (C), 2015-${YEAR}<br>
  * 任务
  * @author   ClownfishYang<br>
  * created on 2020-11-13 11:28:05<br>
