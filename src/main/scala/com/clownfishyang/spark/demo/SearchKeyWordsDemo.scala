@@ -2,8 +2,6 @@ package com.clownfishyang.spark.demo
 
 import org.apache.spark.{HashPartitioner, Partitioner}
 
-import scala.swing.event.Key
-
 /**
   * 搜索词TopN<br>
   *
