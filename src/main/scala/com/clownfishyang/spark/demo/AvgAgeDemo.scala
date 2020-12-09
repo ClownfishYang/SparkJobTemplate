@@ -28,7 +28,7 @@ object AvgAgeDemo extends Demo {
     */
   override def run = {
 //        randomData
-    val ageRDD = sc.sparkContext.parallelize(readDataFile, 5)
+    val ageRDD = sc.sparkContext.parallelize(readDataFile(), 5)
       .map(_.split(","))
       .filter(_.length == 2)
 

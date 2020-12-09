@@ -24,7 +24,7 @@ object SearchKeyWordsDemo extends Demo{
   override def run: Unit = {
     val stopwords = Array("a","are", "to", "the","by","your","you","and","in","of","on")
 
-    sc.sparkContext.parallelize(readDataFile, 5)
+    sc.sparkContext.parallelize(readDataFile(), 5)
       .filter(_.length > 0)
       .map(_.toLowerCase)
       .flatMap(_.split(","))

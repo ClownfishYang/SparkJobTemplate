@@ -31,8 +31,8 @@ trait Demo extends Job {
     nextOption(Map(), list)
   }
 
-  def readDataFile = {
-    val is = getClass.getResourceAsStream(option("dataFile").toString)
+  def readDataFile(dataFile: String = option("dataFile").toString) = {
+    val is = getClass.getResourceAsStream(dataFile)
     Source.fromInputStream(is).getLines().toSeq
   }
 }

@@ -16,7 +16,7 @@ object WordCountDemo extends Demo {
   override def run: Unit = {
 
 //    val rdd = sc.sparkContext.parallelize(Array("one", "two", "two", "three", "three", "three")).map(word => (word, 1))
-    val rdd = sc.sparkContext.parallelize(readDataFile, 5)
+    val rdd = sc.sparkContext.parallelize(readDataFile(), 5)
 
     // 去除结尾逗号
     def dropComma(s: String) = if (s.endsWith(",")) s.dropRight(1) else s

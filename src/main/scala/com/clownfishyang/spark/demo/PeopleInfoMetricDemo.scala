@@ -16,7 +16,7 @@ object PeopleInfoMetricDemo extends Demo {
 
   override def run: Unit = {
 //    randomData
-    val peopleInfoRdd = sc.sparkContext.parallelize(readDataFile, 20)
+    val peopleInfoRdd = sc.sparkContext.parallelize(readDataFile(), 20)
       .map(_.split(","))
       .filter(_.length == 3)
       // sex - height
